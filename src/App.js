@@ -1,22 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import logo from './vts.jpg';
+import "./styles.css";
 
 function App() {
+
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    text != "...." ? setTimeout(() => { setText(text + ".") }, 1000) : setText("");
+  }, [text]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div >
+      <header >
+        <div className="container">
+          <img className="mydog" src={logo} alt="logo" />
+          <h1>VoteTheStock</h1>
+          <h2>Coming Soon{text}</h2>
+        </div>
       </header>
     </div>
   );
