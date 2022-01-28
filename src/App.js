@@ -7,7 +7,7 @@ function App() {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    text != "...." ? setTimeout(() => { setText(text + ".") }, 1000) : setText("");
+    text !== "...." ? setTimeout(() => { setText(text + ".") }, 1000) : setText("");
   }, [text]);
 
   return (
